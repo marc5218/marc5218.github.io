@@ -1,35 +1,44 @@
-<!DOCTYPE html>
+
 <html>
+<br>noter</br>
+<canvas id="myCanvas" width="800" height="600" fillStyle = "black"></canvas>
 
- 
-<body background="images/giphy.gif" height="300">
-<font size="40" color="#D5060C" face="Times New Roman">Welcome to NEW HJORT!</font>
+<script>
+console.log("fuck oliver");
 
-<div align="right"><img src="http://hit-counter-html-code.com/wp-content/themes/customizr/hitcounter/c.php?d=7&amp;id=159357&amp;s=17" border="0" title="Web Design Orange County"><br><small></small></div>
-<br>
-<iframe align="right" src="http://free.timeanddate.com/clock/i5kju2w2/n69/szw110/szh110/hoc00f/hbw0/hfc000/cf100/hgr0/fan2/fas20/facfff/mqcfff/mql6/mqw2/mqd74/mhcfff/mhl6/mhw1/mhd74/mmcfff/mml4/mmw1/mmd74/hhcfff/hmcfff" frameborder="0" width="110" height="110"></iframe>
+var ballY = 20;
+var ballX = 50;
+var ballZ = 800;
+var canvasContext;
+var canvas;
 
-<img height="315" src="images/CN98U6gUcAA7a7P.png"></img>
+window.onload = function(){
+		canvas = document.getElementById('myCanvas');
+		canvasContext = canvas.getContext('2d');
+		
+		setInterval(shit,20);
+}
+	
+function shit(){
+		ballX = ballX + 1;
+		ballY = ballY + 2;
+		ballZ = ballZ - 1;
+		
+		console.log(ballX);
+		canvasContext.fillStyle = "black";
+		canvasContext.fillRect(0,0,canvas.width,canvas.height);
+		canvasContext.fillStyle = "white";
+		canvasContext.fillRect(200,ballX,100,200);
+		canvasContext.fillStyle = "red";
+		canvasContext.fillRect(ballX,100,25,25)
+		canvasContext.fillStyle = "green";
+		canvasContext.fillRect(ballY,300,10,100)
+		canvasContext.fillStyle = "blue";
+		canvasContext.fillRect(ballZ,100,25,25)
+}
+	
+</script>
 
-<a href="http://ogrelord.me/">
-<img height="315" src="images/deer.png">
-</a>
 
-<p></p>
-<p></p>
 
- <iframe width="560" height="315" src="https://www.youtube.com/embed/QoPFF9sc0ds" frameborder="0" allowfullscreen></iframe>
- <img src="images/251.jpg">
-
-<img height="315" src="images/ohdeer.png">
-
- 
- <audio controls loop>
-  <source src="images/jeg.mp3" type="audio/mp3">
-</audio>
- 
-
-</body>
 </html>
-
-
