@@ -1,48 +1,50 @@
-
 <html>
-<br>noter</br>
-<canvas id="myCanvas" width="800" height="600" fillStyle = "black"></canvas>
+some text here
+<canvas id="gameCanvas" width="800" height="600"></canvas>
 
 <script>
-console.log("fuck oliver");
-
-var ballY = 20;
-var ballX = 50;
-var ballZ = 800;
-var canvasContext;
 var canvas;
+var canvasContext;
+var ballX = 50;
+var ballSpeedX = 10;
 
-window.onload = function(){
-		canvas = document.getElementById('myCanvas');
-		canvasContext = canvas.getContext('2d');
-		
-		setInterval(shit,20);
+window.onload = function() {
+	canvas = document.getElementById('gameCanvas');
+	canvasContext = canvas.getContext('2d');
+
+	var framesPerSecond = 30;
+	setInterval(function() {
+			moveEverything();
+			drawEverything();	
+		}, 1000/framesPerSecond);
 }
-	
-function shit(){
-		ballX = ballX + 1;
-		ballY = ballY + 2;
-		ballZ = ballZ - 1;
-		
-		console.log(ballX);
-		canvasContext.fillStyle = "black";
-		canvasContext.fillRect(0,0,canvas.width,canvas.height);
-		canvasContext.fillStyle = "white";
-		canvasContext.fillRect(200,ballX,100,200);
-		canvasContext.fillStyle = "red";
-		canvasContext.fillRect(ballX,100,ballX,ballX)
-		canvasContext.fillStyle = "green";
-		canvasContext.fillRect(ballY,300,10,100)
-		canvasContext.fillStyle = "blue";
-		canvasContext.fillRect(ballZ,100,25,25)
-		canvasContext.fillStyle = "yellow";
-		canvasContext.fillRect(ballY,ballX,25,25)
-		canvasContext.fillStyle = "purple";
-		canvasContext.fillRect(ballZ,303,25,25)
+
+function moveEverything() {
+	ballX = ballX + ballSpeedX;
+	if(ballX < 0) {
+		ballSpeedX = -ballSpeedX;
+	}
+	if(ballX > canvas.width) {
+		ballSpeedX = -ballSpeedX;
+	}
 }
-	
+
+function drawEverything() {
+	// next line blanks out the screen with black
+	colorRect(0,0,canvas.width,canvas.height,'black');
+
+	// this is left player paddle
+	colorRect(0,210,10,100,'white');
+
+	// next line draws the ball
+	colorRect(ballX,100,10,10,'red');
+}
+
+function colorRect(leftX,topY, width,height, drawColor) {
+	canvasContext.fillStyle = drawColor;
+	canvasContext.fillRect(leftX,topY, width,height);
+}
+
 </script>
-
-
 
 </html>
