@@ -1,4 +1,5 @@
 <html>
+<body background="hjort.jpg">
 <br>My game</br>
 
 <canvas id="gameCanvas" Width="800" height="600"></canvas>
@@ -123,7 +124,7 @@ function moveEverything() {
 
 function drawEverything() {
 	//this is the background
-	colorRect(0,0,canvas.width,canvas.height,'hjort.png');
+	colorRect(0,0,canvas.width,canvas.height,'black');
 	
 	if(showingWinScreen) {
 			canvasContext.fillStyle = "white";
@@ -156,5 +157,5 @@ function colorRect(leftX,topY, width,height, drawColor) {
 
 		
 </script>
-
+</body>
 </html>
