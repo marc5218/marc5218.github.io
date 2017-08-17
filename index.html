@@ -11,8 +11,8 @@
 <script>
 var canvas;
 var canvasContext;
-var ballX = 200;
-var ballY = 100;
+var ballX = 50;
+var ballY = 50;
 var ballSpeedX = 7;
 var ballSpeedY = 7;
 var ballAngel = 0.35;
@@ -147,7 +147,7 @@ function drawEverything() {
 	//this is the right paddle
 	colorRect(canvas.width-(paddleThickness),paddle2Y,paddleThickness,PADDLE_HEIGHT,'white');
 	//the circul
-	colorCircle(ballX, ballY, 10, 'white');
+	colorCircle(ballX, ballY, 100, 'white');
 	
 	canvasContext.fillText(player1Score,score,score);
 	canvasContext.fillText(player2Score,canvas.width-(score),score);
